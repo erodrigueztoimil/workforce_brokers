@@ -1,4 +1,33 @@
-// // menu links active handler
+// on scroll navigation background changes color
+$(document).ready(
+  function() {
+    var pagePosition = 0;
+
+    $(document).scroll(
+      function() {
+        pagePosition = $(this).scrollTop();
+
+        if ( pagePosition > 30 ) {
+          $('.navbar').css('background', 'white');
+          $('.navbar').removeClass('navbar-dark');
+          $('.navbar').addClass('navbar-light');
+        }
+
+        if ( pagePosition < 30 ) {
+          $('.navbar').css('background', 'transparent');
+          $('.navbar').removeClass('navbar-light');
+          $('.navbar').addClass('navbar-dark');
+        }
+      }
+    )
+  }
+)
+
+
+
+
+
+// menu links active handler
 // jQuery(
 //   function() {
 //     var link = $('nav a');

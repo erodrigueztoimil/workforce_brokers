@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Inria+Serif|Montserrat|Baloo+Bhai&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inria+Serif|Montserrat&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 html a, html p {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
@@ -42,6 +45,10 @@ html h1, html h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.assistance {
+  height: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */

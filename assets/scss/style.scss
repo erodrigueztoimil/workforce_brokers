@@ -1,5 +1,5 @@
 // load google fonts
-@import url('https://fonts.googleapis.com/css?family=Inria+Serif|Montserrat|Baloo+Bhai&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inria+Serif|Montserrat&display=swap');
 
 // fonts
 $header_text: 'Inria Serif', serif;
@@ -7,6 +7,7 @@ $regular_text: 'Montserrat', sans-serif;
 $big_text: 'Baloo Bhai', cursive;
 
 html {
+  scroll-behavior: smooth;
   a, p {
     font-size: 18px;
     font-family: $regular_text;
@@ -22,10 +23,7 @@ html {
   }
 }
 
-.navbar {
-  // background-color: #fff;
-}
-
+// navigation section
 @media screen and (max-width:340px) {
   .navbar {
     padding: 10px 6%;
@@ -38,6 +36,8 @@ html {
   }
 }
 
+
+// home section
 .carousel-item {
   height: 100vh;
 }
@@ -63,4 +63,10 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+
+// assistance section
+.assistance {
+  height: 500px;
 }
