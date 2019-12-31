@@ -28,26 +28,26 @@ $(document).ready(
 
 
 // menu links active handler
-// jQuery(
-//   function() {
-//     var link = $('nav a');
-//
-//     $(document).scroll(function() {
-//       var position = $(this).scrollTop();
-//
-//       link.each(function() {
-//         var offset = $(this.hash).offset().top - 30;
-//
-//         if ( offset <= position ) {
-//           $(this).parent().addClass('active');
-//           $(this).parent().siblings().removeClass('active');
-//         }
-//       })
-//     })
-//   }
-// );
-//
-//
+jQuery(
+  function() {
+    var link = $('.navbar-nav a');
+
+    $(document).scroll(function() {
+      var position = $(this).scrollTop();
+
+      link.each(function() {
+        var offset = $(this.hash).offset().top - 220;
+
+        if ( offset <= position ) {
+          $(this).addClass('active');
+          $(this).siblings().removeClass('active');
+        }
+      })
+    })
+  }
+);
+
+
 // // menu button animaiton handler
 // jQuery(
 //   function() {
