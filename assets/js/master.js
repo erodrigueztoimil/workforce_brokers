@@ -44,23 +44,37 @@ $(document).ready(
 // );
 
 
-// // menu button animaiton handler
-// jQuery(
-//   function() {
-//     var menuItems = $('.menu-items');
-//     var menuButton = $('.menu-button');
-//     var menuLink = $('nav a');
-//
-//     menuButton.click(() => {
-//       $('html').toggleClass('overflow');
-//       menuButton.toggleClass('show');
-//       menuItems.toggleClass('show');
-//     });
-//
-//     menuLink.click(() => {
-//       $('html').removeClass('overflow');
-//       menuButton.removeClass('show');
-//       menuItems.removeClass('show');
-//     });
-//   }
-// )
+// when menu button clicked navigation slides in
+jQuery(
+  function() {
+    var menuButton = $('.menu-button');
+    var menuBackdrop = $('.menu-backdrop');
+    var menuItems = $('.menu-items');
+    var menuLink = $('.menu-items a');
+    var page = $('html');
+
+    menuButton.click(
+      function() {
+        menuItems.toggleClass('show');
+        menuBackdrop.toggleClass('show');
+        page.css('overflow', 'hidden');
+      }
+    )
+
+    menuBackdrop.click(
+      function() {
+        menuItems.removeClass('show');
+        menuBackdrop.removeClass('show');
+        page.css('overflow', 'scroll');
+      }
+    )
+
+    menuLink.click(
+      function() {
+        menuItems.removeClass('show');
+        menuBackdrop.removeClass('show');
+        page.css('overflow', 'scroll');
+      }
+    )
+  }
+)

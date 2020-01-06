@@ -7,6 +7,7 @@ $regular-text: 'Raleway', sans-serif;
 // colors
 $black: #342729;
 $light-brown: #CBC3B6;
+$backdrop: rgba(183, 183, 183, 0.44);
 
 html {
   h1, h2, h3 {
@@ -40,61 +41,85 @@ html {
   }
 }
 
+
 nav {
   position: fixed;
   width: 100%;
   z-index: 2;
 
-  .wrapper {
+  .parent {
     display: flex;
     align-items: center;
     padding: 40px 5%;
+  }
 
-    .divider {
-      flex: 1;
-    }
+  .divider {
+    flex: 1;
+  }
 
-    .menu-items {
-      .menu-item {
-        margin: 0 10px;
-
-        &:hover {
-          color: $light-brown;
-        }
-      }
-
-      .button {
-        padding: 5px 20px;
-      }
-    }
+  .button {
+    padding: 5px 20px;
   }
 }
 
 @media screen and (max-width:768px) {
   nav {
+    .parent {
+      padding: 40px 7%;
+    }
+
     .menu-items {
+      position: absolute;
+      background-color: $light-brown;
+      top: 0;
+      right: 0;
+      width: 70vw;
+      height: 100vh;
+      transform: translateX(100%);
+      transition: transform 0.2s ease-out;
+      z-index: 2;
+
+      &.show {
+        transform: translateX(0%);
+      }
+
+      // center the links on the navigation drawer
+      .center {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .menu-item {
+          display: block;
+          margin: 20px;
+        }
+      }
+    }
+
+    .menu-backdrop {
+      position: absolute;
+      background-color: $backdrop;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
       display: none;
+      z-index: 1;
+
+      &.show {
+        display: block;
+      }
     }
 
     .menu-button {
-      cursor: pointer;
-
       .bar {
-        width: 30px;
+        width: 25px;
         height: 2px;
-        background-color: white;
-        margin: 6px 0;
-        transition: 0.4s;
-      }
-
-      &.clicked {
-        .bar1 {
-          transform: rotate(-40deg) translate(-0px, 5px);
-        }
-
-        .bar2 {
-          transform: rotate(40deg) translate(-0px, -5px);
-        }
+        background-color: #333;
+        margin: 5px 0;
+        border-radius: 50px;
       }
     }
   }
@@ -102,14 +127,24 @@ nav {
 
 @media screen and (min-width:769px) {
   nav {
-    .menu-button {
+    .menu-item {
+      margin: 0 10px;
+
+      &:hover {
+        color: $light-brown;
+      }
+    }
+
+    button {
       display: none;
     }
   }
 }
 
+
+
 #hero {
-  .wrapper {
+  .parent {
     display: flex;
 
     .half {
@@ -139,14 +174,16 @@ nav {
   }
 }
 
-@media screen and (max-width:740px) {}
+@media screen and (max-width:768px) {}
 
-@media screen and (min-width:741px) {}
+@media screen and (min-width:769px) {}
+
 
 
 #about {
   height: 100vh;
 }
+
 
 
 #application {
@@ -185,6 +222,7 @@ nav {
 }
 
 
+
 #cta {
   text-align: center;
   background: $light-brown;
@@ -196,6 +234,7 @@ nav {
     margin-bottom: 50px;
   }
 }
+
 
 
 #contact {
@@ -231,6 +270,7 @@ nav {
     }
   }
 }
+
 
 
 footer {

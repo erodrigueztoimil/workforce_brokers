@@ -29,69 +29,98 @@ nav {
   width: 100%;
   z-index: 2;
 }
-nav .wrapper {
+nav .parent {
   display: flex;
   align-items: center;
   padding: 40px 5%;
 }
-nav .wrapper .divider {
+nav .divider {
   flex: 1;
 }
-nav .wrapper .menu-items .menu-item {
-  margin: 0 10px;
-}
-nav .wrapper .menu-items .menu-item:hover {
-  color: #CBC3B6;
-}
-nav .wrapper .menu-items .button {
+nav .button {
   padding: 5px 20px;
 }
 
 @media screen and (max-width: 768px) {
-  nav .menu-items {
-    display: none;
+  nav .parent {
+    padding: 40px 7%;
   }
-  nav .menu-button {
-    cursor: pointer;
+  nav .menu-items {
+    position: absolute;
+    background-color: #CBC3B6;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-out;
+    z-index: 2;
+  }
+  nav .menu-items.show {
+    transform: translateX(0%);
+  }
+  nav .menu-items .center {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  nav .menu-items .center .menu-item {
+    display: block;
+    margin: 20px;
+  }
+  nav .menu-backdrop {
+    position: absolute;
+    background-color: rgba(183, 183, 183, 0.44);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+  nav .menu-backdrop.show {
+    display: block;
   }
   nav .menu-button .bar {
-    width: 30px;
+    width: 25px;
     height: 2px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  nav .menu-button.clicked .bar1 {
-    transform: rotate(-40deg) translate(0px, 5px);
-  }
-  nav .menu-button.clicked .bar2 {
-    transform: rotate(40deg) translate(0px, -5px);
+    background-color: #333;
+    margin: 5px 0;
+    border-radius: 50px;
   }
 }
 @media screen and (min-width: 769px) {
-  nav .menu-button {
+  nav .menu-item {
+    margin: 0 10px;
+  }
+  nav .menu-item:hover {
+    color: #CBC3B6;
+  }
+  nav button {
     display: none;
   }
 }
-#hero .wrapper {
+#hero .parent {
   display: flex;
 }
-#hero .wrapper .half {
+#hero .parent .half {
   width: 50%;
   position: relative;
 }
-#hero .wrapper .header {
+#hero .parent .header {
   width: 80%;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#hero .wrapper .header h1 {
+#hero .parent .header h1 {
   font-size: 50px;
   margin-bottom: 30px;
 }
-#hero .wrapper .image img {
+#hero .parent .image img {
   width: 100%;
   height: 100vh;
 }
