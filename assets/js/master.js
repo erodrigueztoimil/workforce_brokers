@@ -1,4 +1,4 @@
-// // on scroll navigation background changes color
+// on scroll navigation background changes color
 $(document).ready(
   function() {
     var pagePosition = 0;
@@ -20,13 +20,31 @@ $(document).ready(
 )
 
 
+// menu active handler
+$(document).ready(
+  function() {
+    var anchor = $('.menu-item');
+
+    $(document).scroll(function() {
+      var pos = $(this).scrollTop();
+
+      anchor.each(function() {
+        var offset = $(this.hash).offset().top - 220;
+
+        if (offset <= pos) {
+          $(this).addClass('active');
+          $(this).siblings().removeClass('active');
+        }
+      })
+    })
+  }
+)
 
 
-
-// // menu links active handler
+// menu links active handler
 // jQuery(
 //   function() {
-//     var link = $('.navbar-nav a');
+//     var link = $('nav a');
 //
 //     $(document).scroll(function() {
 //       var position = $(this).scrollTop();

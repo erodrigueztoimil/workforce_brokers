@@ -37,6 +37,9 @@ nav .parent {
 nav .divider {
   flex: 1;
 }
+nav .active {
+  text-decoration: overline;
+}
 nav .button {
   padding: 5px 20px;
 }
@@ -96,7 +99,7 @@ nav .button {
     margin: 0 10px;
   }
   nav .menu-item:hover {
-    color: #CBC3B6;
+    text-decoration: overline;
   }
   nav button {
     display: none;
@@ -122,10 +125,6 @@ nav .button {
 }
 #hero .parent .image img {
   width: 100%;
-  height: 100vh;
-}
-
-#about {
   height: 100vh;
 }
 
@@ -169,6 +168,21 @@ nav .button {
   margin-bottom: 50px;
 }
 
+#about {
+  padding-top: 150px;
+}
+#about .container {
+  margin: auto;
+  justify-content: center;
+}
+#about .container .image img {
+  width: 100%;
+  height: 100%;
+}
+#about .container .text {
+  padding: 60px 30px;
+}
+
 #contact {
   padding: 150px 10%;
 }
@@ -184,9 +198,10 @@ nav .button {
 }
 #contact .info h3 {
   font-size: 20px;
+  margin: 0;
 }
 #contact .info .col-sm-8 {
-  margin: 20px auto;
+  margin: 10px auto;
 }
 #contact .map iframe {
   width: 100%;
